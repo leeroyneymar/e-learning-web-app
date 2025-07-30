@@ -1,0 +1,171 @@
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -320px;
+  width: 320px;
+  height: 100vh;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+  z-index: 50;
+  overflow-y: auto;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.sidebar-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  color: #6b7280;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.sidebar-content {
+  padding: 1rem;
+}
+
+.lesson-category {
+  margin-bottom: 2rem;
+}
+
+.category-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  padding: 0 0.5rem;
+}
+
+.lesson-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.lesson-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: #374151;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.lesson-item:hover {
+  background-color: #f9fafb;
+  border-color: #e5e7eb;
+}
+
+.lesson-item.completed {
+  background-color: #ecfdf5;
+  border-color: #22c55e;
+  color: #166534;
+}
+
+.lesson-item.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lesson-item.locked:hover {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.lesson-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.25rem;
+  background-color: #f3f4f6;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.lesson-item.completed .lesson-icon {
+  background-color: #22c55e;
+  color: white;
+}
+
+.lesson-item.locked .lesson-icon {
+  background-color: #f87171;
+  color: white;
+}
+
+.lesson-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.lesson-title {
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.lesson-difficulty {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: capitalize;
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    position: static;
+    left: 0;
+    width: 320px;
+    height: auto;
+    box-shadow: none;
+    border-right: 1px solid #e2e8f0;
+  }
+  
+  .sidebar-overlay {
+    display: none;
+  }
+  
+  .close-btn {
+    display: none;
+  }
+}
